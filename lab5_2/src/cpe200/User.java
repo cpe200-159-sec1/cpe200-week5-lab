@@ -21,26 +21,18 @@ public class User {
     }
 
     public String setUserName(String name) {
-        if(name.equals("")||name == null)
-            return null;
-        if(name.matches(userPattern))
-        {
-            String oldUserName = userName;
-            userName = name;
-            return oldUserName;
-        }
-        throw new RuntimeException("Invalid username");
+        if(name.equals("")||name == null||!name.matches(userPattern))
+            throw new RuntimeException("Invalid username");
+        String oldUserName = userName;
+        userName = name;
+        return oldUserName;
     }
 
     public int setPassword(String name) {
-        if(name.equals("")||name == null)
-            return password.length();
-        if(name.matches(passPattern))
-        {
-            password = name;
-            return password.length();
-        }
-        throw new RuntimeException("Invalid password");
+        if(name.equals("")||name == null||!name.matches(passPattern))
+            throw new RuntimeException("Invalid password");
+        password = name;
+        return password.length();
     }
 
     public String getUserName() {

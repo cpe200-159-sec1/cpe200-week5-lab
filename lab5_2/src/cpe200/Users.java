@@ -36,14 +36,7 @@ public class Users {
 
     public boolean exists(User user)
     {
-        for(User u : userList)
-        {
-            if(u.equals(user))
-            {
-                return true;
-            }
-        }
-        return false;
+        return userList.contains(user);
     }
 
     public boolean usernameExists(String username)
