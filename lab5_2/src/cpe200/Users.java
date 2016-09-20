@@ -9,42 +9,57 @@ import java.util.ArrayList;
 public class Users {
     public ArrayList<User> userList;
 
-    public void addUser(User user)
-    {
+    public Users(){
+        userList = new ArrayList<User>();
+    };
+
+    public void addUser(User user) {
+        userList.add(user);
     }
 
-    public void addUser(String userName, String password)
-    {
+    public void addUser(String userName, String password) {
+        User user = new User();
+        user.setUserName(userName);
+        user.setPassword(password);
+        userList.add(user);
     }
 
-    public void deleteUser(User user)
-    {
-
+    public void deleteUser(User user) {
+        if (userList.size() > 0 ) {
+            userList.remove(user);
+        }else {
+            throw new RuntimeException("Empty!");
+        }
     }
 
-    public boolean exists(User user)
-    {
-        return false;
+    public boolean exists(User user) {
+        return userList.contains(user);
     }
 
-    public boolean usernameExists(String username)
-    {
+    public boolean usernameExists(String username) {
+        for (int i = 0; i < userList.size(); i++) {
+            if (username == userList.get(i).getUserName()) {
+                return true;
+            }
+        }
         return false;
     }
 
     /* This method should return null when the user with username is not in the list */
-    public User getUserByUsername(String userName)
-    {
+    public User getUserByUsername(String userName) {
+        for (int i = 0; i < userList.size(); i++) {
+            if (userName.equals(userList.get(i).getUserName())) {
+                return userList.get(i);
+            }
+        }
         return null;
     }
 
-    public int count()
-    {
-        return 0;
+    public int count() {
+        return userList.size();
     }
 
-    public User[] getUserArray()
-    {
-        return null;
+    public User[] getUserArray() {
+        return  userList.toArray(new User[1]);
     }
 }
