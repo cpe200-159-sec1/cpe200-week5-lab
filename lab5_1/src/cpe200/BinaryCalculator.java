@@ -1,7 +1,6 @@
 package cpe200;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 
 /**
@@ -27,19 +26,19 @@ public class BinaryCalculator {
     }
 
     public String add() {
-        safetyCheck();
+        CheckNegativeOperand();
         return firstOperand.add(secondOperand)
                 .stripTrailingZeros().toString();
     }
 
     public String subtract() {
-        safetyCheck();
+        CheckNegativeOperand();
         return firstOperand.subtract(secondOperand)
                 .stripTrailingZeros().toString();
     }
 
     public String multiply() {
-        safetyCheck();
+        CheckNegativeOperand();
         return firstOperand.multiply(secondOperand)
                 .stripTrailingZeros().toString();
     }
@@ -48,14 +47,14 @@ public class BinaryCalculator {
     public String division() {
         if (secondOperand.equals(BigDecimal.ZERO))
             throw new ArithmeticException();
-        safetyCheck();
+        CheckNegativeOperand();
         return firstOperand.divide(secondOperand, 5, RoundingMode.HALF_UP)
                 .stripTrailingZeros().toString();
     }
 
 
     public String power() {
-        safetyCheck();
+        CheckNegativeOperand();
         return BigDecimal.valueOf(
                 Math.pow(
                         firstOperand.doubleValue(),
@@ -64,8 +63,8 @@ public class BinaryCalculator {
         ).stripTrailingZeros().toString();
     }
 
-    private void safetyCheck() {
-        if(firstOperand.compareTo(BigDecimal.ZERO)<=0 || secondOperand.compareTo(BigDecimal.ZERO)<=0) {
+    private void CheckNegativeOperand() {
+        if (firstOperand.compareTo(BigDecimal.ZERO) < 0 || secondOperand.compareTo(BigDecimal.ZERO) < 0) {
             throw new RuntimeException("Operand must greater than ZERO");
         }
     }
