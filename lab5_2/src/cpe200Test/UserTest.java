@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
  */
 public class UserTest {
     protected User user;
+
     @Before
     public void setUp() throws Exception {
         user = new User();
