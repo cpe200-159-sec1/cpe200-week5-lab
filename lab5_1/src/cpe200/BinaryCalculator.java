@@ -28,7 +28,6 @@ public class BinaryCalculator {
             throw new RuntimeException();
         }
         BigDecimal out = first.add(second);
-
         return out.stripTrailingZeros().toString();
 
     }
@@ -50,7 +49,6 @@ public class BinaryCalculator {
             throw new RuntimeException();
         }
         BigDecimal out = first.multiply(second);
-
         return out.stripTrailingZeros().toString();
     }
 
@@ -62,8 +60,6 @@ public class BinaryCalculator {
             throw new RuntimeException();
         }
         BigDecimal out = first.divide(second,5,5);
-
-
         return  out.stripTrailingZeros().toString();
     }
 
@@ -74,7 +70,6 @@ public class BinaryCalculator {
             throw new RuntimeException();
         }
         BigDecimal out = first.pow(second.intValue());
-
         return  out.stripTrailingZeros().toString();
 
     }
