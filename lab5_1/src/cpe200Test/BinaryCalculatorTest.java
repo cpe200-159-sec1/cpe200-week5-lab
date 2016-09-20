@@ -41,7 +41,7 @@ public class BinaryCalculatorTest {
             fail("Not expect exception here");
         }
         try {
-            assertEquals("0", binaryCalculator.add());
+            binaryCalculator.add();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -70,7 +70,7 @@ public class BinaryCalculatorTest {
             fail("Not expect exception here");
         }
         try {
-            assertEquals("-2", binaryCalculator.subtract());
+            binaryCalculator.subtract();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -99,7 +99,7 @@ public class BinaryCalculatorTest {
             fail("Not expect exception here");
         }
         try {
-            assertEquals("-1", binaryCalculator.multiply());
+            binaryCalculator.multiply();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -191,7 +191,7 @@ public class BinaryCalculatorTest {
             fail("Not expect exception here");
         }
         try {
-            assertEquals("-8", binaryCalculator.power());
+            binaryCalculator.power();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -436,7 +436,7 @@ public class BinaryCalculatorTest {
         }
 
         try {
-            assertEquals("-2", binaryCalculator.subtract());
+            binaryCalculator.subtract();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -466,7 +466,7 @@ public class BinaryCalculatorTest {
         }
 
         try {
-            assertEquals("-1", binaryCalculator.multiply());
+            binaryCalculator.multiply();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -496,7 +496,7 @@ public class BinaryCalculatorTest {
         }
 
         try {
-            assertEquals("-1", binaryCalculator.division());
+            binaryCalculator.division();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -561,7 +561,7 @@ public class BinaryCalculatorTest {
         }
 
         try {
-            assertEquals("-8", binaryCalculator.division());
+            binaryCalculator.power();
             fail("Expect an exception to be thrown before here");
         } catch (RuntimeException ex) {
             assertTrue(true);
@@ -582,7 +582,7 @@ public class BinaryCalculatorTest {
     @Test
     public void operandDirectAccess() throws Exception {
         Field field = Operand.class.getDeclaredField("operand");
-        assertFalse(Modifier.isPublic(field.getModifiers()));
+       assertFalse(Modifier.isPublic(field.getModifiers()));
 
         field = BinaryCalculator.class.getDeclaredField("firstOperand");
         assertFalse(Modifier.isPublic(field.getModifiers()));
