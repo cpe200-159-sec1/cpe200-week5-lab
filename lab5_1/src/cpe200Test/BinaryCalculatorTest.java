@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 import static org.junit.Assert.*;
 
 
@@ -546,7 +547,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand(2.0);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("9", binaryCalculator.multiply());
+        assertEquals("9", binaryCalculator.power());
     }
 
     @Test

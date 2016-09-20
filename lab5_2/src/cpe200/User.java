@@ -8,6 +8,7 @@ public class User {
     public String password;
 
     public User() {
+
     }
 
     public String setUserName(String name) {
