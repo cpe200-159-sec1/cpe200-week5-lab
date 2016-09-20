@@ -30,21 +30,30 @@ public class BinaryCalculator {
         }return x.add(y).stripTrailingZeros().toString();
     }
 
-    public String subtract() throws RuntimeException {
-        return null;
+    public String subtract() {
+        if (x.intValue() < 0 || y.intValue() < 0){
+            throw new RuntimeException("Operand must not negative");
+        }return x.subtract(y).stripTrailingZeros().toString();
     }
 
-    public String multiply() throws RuntimeException {
-        return null;
+    public String multiply() {
+        if (x.intValue() < 0 || y.intValue() < 0){
+            throw new RuntimeException("Operand must not negative");
+        }return x.multiply(y).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
-    public String division() throws RuntimeException {
-        return null;
+    public String division()  {
+        if (x.intValue() < 0 || y.intValue() < 0){
+            throw new RuntimeException("Operand must not negative");
+        }return x.divide(y, 5, BigDecimal.ROUND_HALF_UP).stripTrailingZeros().toString();
     }
 
-    public String power() throws RuntimeException {
-        return null;
+    public String power()  {
+        int e = y.intValue();
+        if (x.intValue() < 0 || y.intValue() < 0){
+            throw new RuntimeException("Operand must not negative");
+        }return x.pow(e).stripTrailingZeros().toString();
     }
 
 }
