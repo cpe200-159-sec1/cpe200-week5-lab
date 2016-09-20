@@ -18,7 +18,7 @@ Requirement:
 considered in the result. The sixth and so on digit should be rounded
 to the nearest number, 5 will be always round up. 
 
-2. Only the arguments with value greater than zero will be computed, 
+2. Only the arguments with non-negative value will be computed, 
 otherwise, RuntimeException should be thrown from operators.
 
 2. For division operation, it must throw an ArithmeticException when 
