@@ -1,39 +1,86 @@
 package cpe200;
 
 
+import java.math.BigDecimal;
+
 public class BinaryCalculator {
-    public Operand firstOperand;
-    public Operand secondOperand;
+    private Operand firstOperand;
+    private Operand secondOperand;
 
-    public BinaryCalculator() {
+    public BinaryCalculator()
+    {
+        firstOperand = new Operand("");
+        secondOperand = new Operand("");
     }
 
-    public void setFirstOperand(Operand operand) {
+    public void setFirstOperand(Operand operand)
+    {
+        firstOperand = operand;
     }
 
 
-    public void setSecondOperand(Operand operand) {
+    public void setSecondOperand(Operand operand)
+    {
+        secondOperand = operand;
     }
 
-    public String add() throws RuntimeException {
-        return null;
+    public String add() throws RuntimeException
+    {
+        BigDecimal first = new BigDecimal(firstOperand.Getdata());
+        BigDecimal second = new BigDecimal(secondOperand.Getdata());
+        if(first.intValue()<0 || second.intValue()<0)
+        {
+            throw new RuntimeException("number is lower than zero");
+        }
+        BigDecimal sum = first.add(second);
+        return sum.stripTrailingZeros().toString();
     }
 
     public String subtract() throws RuntimeException {
-        return null;
+        BigDecimal first = new BigDecimal(firstOperand.Getdata());
+        BigDecimal second = new BigDecimal(secondOperand.Getdata());
+        if(first.intValue()<0 || second.intValue()<0)
+        {
+            throw new RuntimeException("number is lower than zero");
+        }
+        BigDecimal sum = first.subtract(second);
+        return sum.stripTrailingZeros().toString();
     }
 
     public String multiply() throws RuntimeException {
-        return null;
+        BigDecimal first = new BigDecimal(firstOperand.Getdata());
+        BigDecimal second = new BigDecimal(secondOperand.Getdata());
+        if(first.intValue()<0 || second.intValue()<0)
+        {
+            throw new RuntimeException("number is lower than zero");
+        }
+        BigDecimal sum = first.multiply(second);
+        return sum.stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
     public String division() throws RuntimeException {
-        return null;
+        BigDecimal first = new BigDecimal(firstOperand.Getdata());
+        BigDecimal second = new BigDecimal(secondOperand.Getdata());
+        if(first.intValue()<0 || second.intValue()<0)
+        {
+            throw new RuntimeException("number is lower than zero");
+        }
+        BigDecimal out = first.divide(second,5,4);
+
+        return out.stripTrailingZeros().toString();
     }
 
     public String power() throws RuntimeException {
-        return null;
+        BigDecimal first = new BigDecimal(firstOperand.Getdata());
+        BigDecimal second = new BigDecimal(secondOperand.Getdata());
+        if(first.intValue()<0 || second.intValue()<0)
+        {
+            throw new RuntimeException("number is lower than zero");
+        }
+        BigDecimal out = first.pow(second.intValue());
+
+        return out.stripTrailingZeros().toString();
     }
 
 }
