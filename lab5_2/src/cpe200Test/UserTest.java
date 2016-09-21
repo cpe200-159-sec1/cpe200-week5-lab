@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 /**
  * Created by pruet on 6/9/2559.
  */
+
 public class UserTest {
     protected User user;
     @Before
