@@ -19,7 +19,7 @@ public class BinaryCalculator {
 
     public String add() throws RuntimeException {
         if (Integer.parseInt(firstOperand.getOperand()) < 0 || Integer.parseInt(secondOperand.getOperand()) < 0){
-            throw new RuntimeException("BABABA");
+            throw new RuntimeException("Input can't be negative.");
         }
         try {
             String ans = String.format("%."+ 5 + "f", Double.parseDouble(firstOperand.getOperand()) + Double.parseDouble(secondOperand.getOperand()));
@@ -35,7 +35,7 @@ public class BinaryCalculator {
 
     public String subtract() throws RuntimeException {
         if (Integer.parseInt(firstOperand.getOperand()) < 0 || Integer.parseInt(secondOperand.getOperand()) < 0){
-            throw new RuntimeException("BABABA");
+            throw new RuntimeException("Input can't be negative.");
         }
         try {
             String ans = String.format("%."+ 5 + "f", Double.parseDouble(firstOperand.getOperand()) - Double.parseDouble(secondOperand.getOperand()));
@@ -51,7 +51,7 @@ public class BinaryCalculator {
 
     public String multiply() throws RuntimeException {
         if (Integer.parseInt(firstOperand.getOperand()) < 0 || Integer.parseInt(secondOperand.getOperand()) < 0){
-            throw new RuntimeException("BABABA");
+            throw new RuntimeException("Input can't be negative.");
         }
         try {
             String ans = String.format("%."+ 5 + "f", Double.parseDouble(firstOperand.getOperand()) * Double.parseDouble(secondOperand.getOperand()));
@@ -71,7 +71,7 @@ public class BinaryCalculator {
             throw new ArithmeticException("Divide by zero");
         }
         if (Integer.parseInt(firstOperand.getOperand()) < 0 || Integer.parseInt(secondOperand.getOperand()) < 0){
-            throw new RuntimeException("BABABA");
+            throw new RuntimeException("Input can't be negative.");
         }
         try {
             String ans = String.format("%."+ 5 + "f", Double.parseDouble(firstOperand.getOperand()) / Double.parseDouble(secondOperand.getOperand()));
@@ -87,7 +87,7 @@ public class BinaryCalculator {
 
     public String power() throws RuntimeException {
         if (Integer.parseInt(firstOperand.getOperand()) < 0 || Integer.parseInt(secondOperand.getOperand()) < 0){
-            throw new RuntimeException("BABABA");
+            throw new RuntimeException("Input can't be negative.");
         }
         try {
             String ans = String.format("%."+ 5 + "f", Math.pow(Double.parseDouble(firstOperand.getOperand()) , Double.parseDouble(secondOperand.getOperand())));
