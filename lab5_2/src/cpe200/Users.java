@@ -39,7 +39,7 @@ public class Users {
     public boolean usernameExists(String username)
     {
         for (User i : userList){
-            if (i.userName.equals(username)) return true;
+            if (i.getUserName().equals(username)) return true;
         }
         return false;
     }
@@ -47,16 +47,16 @@ public class Users {
     /* This method should return null when the user with username is not in the list */
     public User getUserByUsername(String userName)
     {
+        for (User i : userList){
+            if (i.getUserName().equals(userName)) return i;
+        }
         return null;
     }
 
     public int count()
     {
-        return 0;
+        return userList.size();
     }
 
-    public User[] getUserArray()
-    {
-        return null;
-    }
+    public User[] getUserArray() { return userList.toArray(new User[1]); }
 }
