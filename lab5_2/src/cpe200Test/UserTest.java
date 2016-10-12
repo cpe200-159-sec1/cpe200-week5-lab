@@ -25,6 +25,7 @@ public class UserTest {
         assertEquals("HarryPotter", user.setUserName("harrypotter"));
     }
 
+
     @Test
     public void setUserNameInValid() throws Exception {
         try {
